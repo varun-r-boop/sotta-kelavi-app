@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style the search bar and dropdown */
+    #search-container {
+        display: flex;
+        justify-content: center; /* Horizontally center the search bar and dropdown */
+        margin: 20px; 
+      }
+      
+      #search-input {
+        padding: 10px;
+        width: 300px; /* Wider input field */
+        border: 1px solid #ccc; /* Add a border for better separation */
+        border-radius: 5px; /* Add rounded corners */
+      }
+      
+      #search-criteria {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      #search-criteria option {
+        padding: 10px;
+      }
+      
+      #search-button {
+        padding: 10px;
+        background-color: #007bff; /* Blue button color */
+        color: white; /* White text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px; /* Add some space between the dropdown and the button */
+      }
+      
+      #search-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+  </style>
+</head>
+<body>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search Breweries...">
+    <select id="search-criteria">
+      <option value="name">Name</option>
+      <option value="email">City</option>
+      <option value="age">Type</option>
+      <!-- Add more criteria as needed -->
+    </select>
+    <button onclick="search()">Search</button>
+  </div>
+
+  <div id="search-results">
+    <!-- Display search results here -->
+  </div>
+
+  <script>
+    function search() {
+      const searchInput = document.getElementById("search-input").value;
+      const searchCriteria = document.getElementById("search-criteria").value;
+      const searchResults = document.getElementById("search-results");
+
+      // Here, you can implement your search logic based on the selected criteria
+      // For this example, we will just display the search criteria and input
+      searchResults.innerHTML = `Searching for "${searchInput}" in ${searchCriteria}...`;
+    }
+  </script>
+</body>
+</html>

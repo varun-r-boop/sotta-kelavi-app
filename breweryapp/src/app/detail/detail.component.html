@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Style the review container */
+    #review-container {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    #review-text {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    #rating {
+      margin-bottom: 10px;
+    }
+
+    #submit-button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="review-container">
+    <h2>Write a Review</h2>
+    <textarea id="review-text" placeholder="Write your review here..." rows="5"></textarea>
+    <div id="rating">
+      <label for="rating">Rate the brewery out of 5:</label>
+      <input type="number" id="rating-input" min="0" max="5" step="0.1">
+    </div>
+    <button id="submit-button" onclick="submitReview()">Submit Review</button>
+  </div>
+
+  <div id="review-results">
+    <!-- Display review results here -->
+  </div>
+
+  <script>
+    function submitReview() {
+      const reviewText = document.getElementById("review-text").value;
+      const rating = document.getElementById("rating-input").value;
+
+      // Here, you can process and store the review and rating, e.g., send to a server or display on the page
+      const reviewResults = document.getElementById("review-results");
+      reviewResults.innerHTML = `Review: ${reviewText}<br>Rating: ${rating}/5`;
+    }
+  </script>
+
